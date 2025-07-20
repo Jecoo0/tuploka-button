@@ -53,15 +53,19 @@
   <button onclick="showVideo()">Tuploka ko</button>
 
   <div class="video-container" id="funnyVideo">
-    <iframe src="https://www.youtube.com/embed/D3iVBI7mGUg?autoplay=1"
-            title="Funny Dancing Man"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+    <iframe id="ytFrame"
+      src=""
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Dancing Funny Man"></iframe>
   </div>
 
   <script>
     function showVideo() {
-      document.getElementById("funnyVideo").style.display = "block";
+      const videoContainer = document.getElementById("funnyVideo");
+      const ytFrame = document.getElementById("ytFrame");
+      ytFrame.src = "https://www.youtube.com/embed/D3iVBI7mGUg?autoplay=1&mute=1";
+      videoContainer.style.display = "block";
     }
   </script>
 
