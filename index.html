@@ -14,6 +14,7 @@
       background-color: #fff0f0;
       font-family: Arial, sans-serif;
     }
+
     #tuplokaBtn {
       padding: 60px 60px;
       font-size: 60px;
@@ -24,25 +25,42 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
+
     #tuplokaBtn:hover {
       background-color: #ff3b3b;
     }
+
     .video-container {
       margin-top: 20px;
       display: none;
       border: 4px solid #555;
       border-radius: 10px;
       overflow: hidden;
+      animation: fadeZoom 0.8s ease forwards;
     }
+
     iframe {
       width: 360px;
       height: 640px;
       border: none;
     }
+
     @media (max-width: 400px) {
       iframe {
         width: 90vw;
         height: 160vw;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeZoom {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
       }
     }
   </style>
@@ -60,14 +78,16 @@
 
   <script>
     function showVideo() {
-      // Hide the button
       document.getElementById("tuplokaBtn").style.display = "none";
 
-      // Show the video
       const ytFrame = document.getElementById("ytFrame");
       const videoContainer = document.getElementById("funnyVideo");
+
       ytFrame.src = "https://www.youtube.com/embed/Tc9LGwTR4kA?autoplay=1";
+
+      // Trigger animation
       videoContainer.style.display = "block";
+      videoContainer.style.animation = "fadeZoom 0.8s ease forwards";
     }
   </script>
 
