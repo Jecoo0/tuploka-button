@@ -54,7 +54,6 @@
 
   <div class="video-container" id="funnyVideo">
     <iframe id="ytFrame"
-      src=""
       allow="autoplay; encrypted-media"
       allowfullscreen
       title="Funny Shorts Video"></iframe>
@@ -64,7 +63,8 @@
     function showVideo() {
       const ytFrame = document.getElementById("ytFrame");
       const videoContainer = document.getElementById("funnyVideo");
-      ytFrame.src = "https://www.youtube.com/embed/Tc9LGwTR4kA?autoplay=1"; // No mute
+      // Use the embed URL without mute
+      ytFrame.src = "https://www.youtube.com/embed/Tc9LGwTR4kA?autoplay=1";
       videoContainer.style.display = "block";
     }
   </script>
